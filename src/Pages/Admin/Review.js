@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Dashboard() {
+export default function Review() {
   return (
     <div className="container">
       <div className="breadcrumb d-flex">
-        <p>Dashboard</p>
+        <p>Add Reviews</p>
       </div>
       <div className="dashboard">
         <div className="dashboard-navbar my-5">
@@ -81,14 +81,37 @@ export default function Dashboard() {
           </ul>
         </div>
 
-        <div className="dashboard-content d-inline-block py-0 top-0">
+        <div className="w-75 dashboard-content d-inline-block py-0 top-0">
           <p>
-            Hello <b>technicalboyemon</b> (not <b>technicalboyemon</b>?{" "}
-            <span className="sub_btn">Log out</span> )
+            Hello <b>technicalboyemon</b> ( Do You Want To Add A Review About
+            Our Website ??? )
           </p>
-          From your account dashboard you can view your{" "}
-          <span className="sub_btn">recent orders</span> , manage your shipping
-          and billing addresses, and edit your password and account details.
+
+          <div className="contact-form mt-5">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div class="mb-2">
+                <label for="exampleFormControlTextarea1" class="form-label">
+                  Your Review
+                </label>
+                <textarea
+                placeholder="Your Review"
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                ></textarea>
+              </div>
+            </div>
+            <div className="account-btn">Add Now</div>
         </div>
       </div>
     </div>

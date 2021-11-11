@@ -23,20 +23,16 @@ export default function Footer() {
           <div className="col-md-4">
             <div className="footer-icons text-secondary d-flex justify-content-center">
               <div className="mx-2">
-                {" "}
-                <FontAwesomeIcon icon={faFacebook} />{" "}
+                <FontAwesomeIcon icon={faFacebook} />
               </div>
               <div className="mx-2">
-                {" "}
-                <FontAwesomeIcon icon={faTwitter} />{" "}
+                <FontAwesomeIcon icon={faTwitter} />
               </div>
               <div className="mx-2">
-                {" "}
-                <FontAwesomeIcon icon={faInstagram} />{" "}
+                <FontAwesomeIcon icon={faInstagram} />
               </div>
               <div className="mx-2">
-                {" "}
-                <FontAwesomeIcon icon={faPinterest} />{" "}
+                <FontAwesomeIcon icon={faPinterest} />
               </div>
             </div>
           </div>

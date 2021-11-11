@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 import Newsletter from "../Components/Newsletter";
 
@@ -10,7 +11,10 @@ export default function Home() {
       </header>
       <div className="text-center header-text">
         <h1 className="fw-bolder my-4 header-text"> The WoodCraft Shop </h1>
-        <p>Shop Now</p>
+        <Link to="/products">
+          {" "}
+          <p> Shop Now </p>
+        </Link>
       </div>
       <div className="container my-4">
         <img
@@ -28,8 +32,12 @@ export default function Home() {
                 Find a bright ideal to suit your taste with our great.
               </p>
               <div>
-                <span className="sub_btn me-3">Lightings</span>
-                <span className="sub_btn">Furnitures</span>
+                <Link to="/products">
+                  <span className="sub_btn me-3">Lightings</span>
+                </Link>
+                <Link to="/products">
+                  <span className="sub_btn">Furnitures</span>
+                </Link>
               </div>
             </div>
             <img className="img-fluid img-blur" src="hero_2.jpeg" alt="" />
@@ -63,7 +71,7 @@ export default function Home() {
                 <div className="card-img-overlay text-center py-5 my-4">
                   <h4 className="">BEST CHOICE</h4>
                   <h1 className="card-title py-3">The Last Sales</h1>
-                  <button className="custom-btn">The Last Sales</button>
+                  <Link to="/products"><button className="custom-btn">SHOP NOW</button></Link>
                 </div>
               </div>
             </div>
@@ -118,7 +126,7 @@ export default function Home() {
               <div className="card-img-overlay d-flex align-items-end p-5 my-4">
                 <div className="bottom-banner">
                   <h1 className="card-title py-3">Sunset Lamp</h1>
-                  <div className="sub_btn">Shop Now</div>
+                  <Link to="/products"><div className="sub_btn">Shop Now</div></Link>
                 </div>
               </div>
             </div>
@@ -135,7 +143,7 @@ export default function Home() {
               <div className="card-img-overlay d-flex align-items-end p-5 my-4">
                 <div className="bottom-banner">
                   <h1 className="card-title py-3">Sofia Collection</h1>
-                  <div className="sub_btn">Shop Now</div>
+                  <Link to="/products"><div className="sub_btn">Shop Now</div></Link>
                 </div>
               </div>
             </div>

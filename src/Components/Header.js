@@ -28,7 +28,7 @@ export default function Header() {
             <ul className="navbar-nav mx-auto mb-lg-0">
               <li className="nav-item">
                 <Link
-                  className="nav-link active mx-3"
+                  className="nav-link active mx-2"
                   aria-current="page"
                   to="/"
                 >
@@ -37,7 +37,7 @@ export default function Header() {
               </li>
               <li className="nav-item">
                 <Link
-                  className="nav-link active mx-3"
+                  className="nav-link active mx-2"
                   aria-current="page"
                   to="/products"
                 >
@@ -46,16 +46,25 @@ export default function Header() {
               </li>
               <li className="nav-item">
                 <Link
-                  className="nav-link active mx-3"
+                  className="nav-link active mx-2"
                   aria-current="page"
                   to="/blogs"
                 >
                   Blogs
                 </Link>
               </li>
+              {/* <li className="nav-item">
+                <Link
+                  className="nav-link active mx-2"
+                  aria-current="page"
+                  to="/reviews"
+                >
+                  Reviews
+                </Link>
+              </li> */}
               <li className="nav-item">
                 <Link
-                  className="nav-link active mx-3"
+                  className="nav-link active mx-2"
                   aria-current="page"
                   to="/about"
                 >
@@ -64,7 +73,7 @@ export default function Header() {
               </li>
               <li className="nav-item">
                 <Link
-                  className="nav-link active mx-3"
+                  className="nav-link active mx-2"
                   aria-current="page"
                   to="/contact"
                 >
@@ -75,7 +84,7 @@ export default function Header() {
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link
-                  className="nav-link active mx-3 account-btn"
+                  className="nav-link active mx-2 account-btn"
                   aria-current="page"
                   to="/account"
                 >

@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrashAlt, faEye  } from "@fortawesome/free-solid-svg-icons";
 
-export default function Dashboard() {
+export default function MyOrders() {
+  const Edit = <FontAwesomeIcon icon={faEdit} />
+  const Delete = <FontAwesomeIcon icon={faTrashAlt} />
+  const View = <FontAwesomeIcon icon={faEye} />
   return (
     <div className="container">
       <div className="breadcrumb d-flex">
-        <p>Dashboard</p>
+        <p>My Orders</p>
       </div>
       <div className="dashboard">
         <div className="dashboard-navbar my-5">
@@ -81,14 +86,35 @@ export default function Dashboard() {
           </ul>
         </div>
 
-        <div className="dashboard-content d-inline-block py-0 top-0">
-          <p>
-            Hello <b>technicalboyemon</b> (not <b>technicalboyemon</b>?{" "}
-            <span className="sub_btn">Log out</span> )
-          </p>
-          From your account dashboard you can view your{" "}
-          <span className="sub_btn">recent orders</span> , manage your shipping
-          and billing addresses, and edit your password and account details.
+        <div className="w-75 dashboard-content d-inline-block py-0 top-0">
+
+          <table class="table table-hover table-borderless">
+            <thead class="table-light">
+              <tr>
+                <th className="py-4" scope="col">Order</th>
+                <th className="py-4" scope="col">Date</th>
+                <th className="py-4" scope="col">Total</th>
+                <th className="py-4" scope="col">Status</th>
+                <th className="py-4" scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>Otto</td>
+                <td>{View} {Edit} {Delete}</td>
+              </tr>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>Otto</td>
+                <td>{View} {Edit} {Delete}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
