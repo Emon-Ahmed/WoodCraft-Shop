@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <div>
-      <nav className="navbar my-4 navbar-expand-lg navbar-light">
+      <nav className="navbar my-3 navbar-expand-lg navbar-light">
         <div className="container">
-          <ul className="navbar-nav mb-2 mb-lg-0">
+          <ul className="navbar-nav me-5 mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="navbar-brand" to="/">
-                Navbar
+                <img className="img-fluid logo" src="/mainlogo.png" alt="" />
               </Link>
             </li>
           </ul>
@@ -25,15 +25,19 @@ export default function Header() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav mx-auto mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link active mx-2" aria-current="page" to="/">
+                <Link
+                  className="nav-link active mx-3"
+                  aria-current="page"
+                  to="/"
+                >
                   Home
                 </Link>
               </li>
               <li className="nav-item">
                 <Link
-                  className="nav-link active mx-2"
+                  className="nav-link active mx-3"
                   aria-current="page"
                   to="/products"
                 >
@@ -42,7 +46,16 @@ export default function Header() {
               </li>
               <li className="nav-item">
                 <Link
-                  className="nav-link active mx-2"
+                  className="nav-link active mx-3"
+                  aria-current="page"
+                  to="/blogs"
+                >
+                  Blogs
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link active mx-3"
                   aria-current="page"
                   to="/about"
                 >
@@ -51,7 +64,7 @@ export default function Header() {
               </li>
               <li className="nav-item">
                 <Link
-                  className="nav-link active mx-2"
+                  className="nav-link active mx-3"
                   aria-current="page"
                   to="/contact"
                 >
@@ -62,7 +75,7 @@ export default function Header() {
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link
-                  className="nav-link active mx-2"
+                  className="nav-link active mx-3 account-btn"
                   aria-current="page"
                   to="/account"
                 >

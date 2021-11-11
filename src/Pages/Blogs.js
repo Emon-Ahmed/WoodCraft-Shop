@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function Account() {
+export default function Blogs() {
   return (
     <div className="container">
       <div className="breadcrumb d-flex">
-        <p>My Account</p>
+        <p>Blogs</p>
       </div>
     </div>
   );
