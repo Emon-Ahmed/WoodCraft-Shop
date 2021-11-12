@@ -30,9 +30,9 @@ function App() {
             <Route exact path="/">
               <Home></Home>
             </Route>
-            <PrivateRoute path="/products">
+            <Route path="/products">
               <Products></Products>
-            </PrivateRoute>
+            </Route>
             <Route path="/blogs">
               <Blogs></Blogs>
             </Route>
@@ -48,24 +48,24 @@ function App() {
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
-            <Route path="/addproducts">
+            <PrivateRoute path="/addproducts">
               <AddProducts></AddProducts>
-            </Route>
-            <Route path="/makeadmin">
+            </PrivateRoute>
+            <PrivateRoute path="/makeadmin">
               <MakeAdmin></MakeAdmin>
-            </Route>
-            <Route path="/manageorders">
+            </PrivateRoute>
+            <PrivateRoute path="/manageorders">
               <ManageOrders></ManageOrders>
-            </Route>
-            <Route path="/myorders">
+            </PrivateRoute>
+            <PrivateRoute path="/myorders">
               <MyOrders></MyOrders>
-            </Route>
-            <Route path="/manageproducts">
+            </PrivateRoute>
+            <PrivateRoute path="/manageproducts">
               <ManageProducts></ManageProducts>
-            </Route>
-            <Route path="/reviews">
+            </PrivateRoute>
+            <PrivateRoute path="/reviews">
               <Reviews></Reviews>
-            </Route>
+            </PrivateRoute>
           </Switch>
           <Footer></Footer>
         </BrowserRouter>
