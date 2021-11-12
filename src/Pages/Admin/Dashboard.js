@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 export default function Dashboard() {
+  const { user, logout } = useAuth();
   return (
     <div className="container">
       <div className="breadcrumb d-flex">
@@ -74,7 +76,7 @@ export default function Dashboard() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active mx-2" aria-current="page" to="/">
+              <Link onClick={logout}  className="nav-link active mx-2" aria-current="page" to="/">
                 Logout
               </Link>
             </li>
@@ -83,11 +85,11 @@ export default function Dashboard() {
 
         <div className="dashboard-content d-inline-block py-0 top-0">
           <p>
-            Hello <b>technicalboyemon</b> (not <b>technicalboyemon</b>?{" "}
-            <span className="sub_btn">Log out</span> )
+            Hello <b>{user.email} </b> (not <b> {user.email} </b>?
+            <span onClick={logout} className="sub_btn">Log out</span> )
           </p>
-          From your account dashboard you can view your{" "}
-          <span className="sub_btn">recent orders</span> , manage your shipping
+          From your account dashboard you can view your {' '}
+          <span className="sub_btn"> recent orders</span> , manage your shipping
           and billing addresses, and edit your password and account details.
         </div>
       </div>

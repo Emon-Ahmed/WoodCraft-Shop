@@ -2,8 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrashAlt, faEye  } from "@fortawesome/free-solid-svg-icons";
+import useAuth from '../../Hooks/useAuth';
 
 export default function ManageProducts() {
+  const { user, logout } = useAuth();
   const Edit = <FontAwesomeIcon icon={faEdit} />
   const Delete = <FontAwesomeIcon icon={faTrashAlt} />
   const View = <FontAwesomeIcon icon={faEye} />
@@ -79,7 +81,7 @@ export default function ManageProducts() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active mx-2" aria-current="page" to="/">
+                <Link onClick={logout} className="nav-link active mx-2" aria-current="page" to="/">
                   Logout
                 </Link>
               </li>

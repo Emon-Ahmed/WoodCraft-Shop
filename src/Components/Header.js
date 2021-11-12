@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 
 export default function Header() {
+  const { user, logout } = useAuth();
+
   return (
     <div>
       <nav className="navbar my-3 navbar-expand-lg navbar-light">
@@ -82,15 +85,36 @@ export default function Header() {
               </li>
             </ul>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link
-                  className="nav-link active mx-2 account-btn"
-                  aria-current="page"
-                  to="/account"
-                >
-                  Account
-                </Link>
-              </li>
+              {user?.email ? (
+                <li className="nav-item">
+                  <Link
+                    className="nav-link active mx-2 account-btn"
+                    aria-current="page"
+                    to="/dashboard"
+                  >
+                    Dashboard
+                  </Link>
+                  <Link
+                  onClick={logout}
+                    className="nav-link active mx-2 account-btn"
+                    aria-current="page"
+                    to="/account"
+                  >
+                    Logout
+                  </Link>
+                </li>
+                
+              ) : (
+                <li className="nav-item">
+                  <Link
+                    className="nav-link active mx-2 account-btn"
+                    aria-current="page"
+                    to="/account"
+                  >
+                    Account
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         </div>

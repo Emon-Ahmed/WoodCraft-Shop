@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 export default function MakeAdmin() {
+  const { user, logout } = useAuth();
   return (
     <div className="container">
       <div className="breadcrumb d-flex">
@@ -74,7 +76,7 @@ export default function MakeAdmin() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active mx-2" aria-current="page" to="/">
+              <Link onClick={logout} className="nav-link active mx-2" aria-current="page" to="/">
                 Logout
               </Link>
             </li>

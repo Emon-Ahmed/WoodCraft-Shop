@@ -17,56 +17,59 @@ import MyOrders from "./Pages/Admin/MyOrders";
 
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
-
+import AuthProvider from "./Context/AuthProvider";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Header></Header>
-        <Switch>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/products">
-            <Products></Products>
-          </Route>
-          <Route path="/blogs">
-            <Blogs></Blogs>
-          </Route>
-          <Route path="/about">
-            <About></About>
-          </Route>
-          <Route path="/contact">
-            <Contact></Contact>
-          </Route>
-          <Route path="/account">
-            <Account></Account>
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard></Dashboard>
-          </Route>
-          <Route path="/addproducts">
-            <AddProducts></AddProducts>
-          </Route>
-          <Route path="/makeadmin">
-            <MakeAdmin></MakeAdmin>
-          </Route>
-          <Route path="/manageorders">
-            <ManageOrders></ManageOrders>
-          </Route>
-          <Route path="/myorders">
-            <MyOrders></MyOrders>
-          </Route>
-          <Route path="/manageproducts">
-            <ManageProducts></ManageProducts>
-          </Route>
-          <Route path="/reviews">
-            <Reviews></Reviews>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <PrivateRoute path="/products">
+              <Products></Products>
+            </PrivateRoute>
+            <Route path="/blogs">
+              <Blogs></Blogs>
+            </Route>
+            <Route path="/about">
+              <About></About>
+            </Route>
+            <Route path="/contact">
+              <Contact></Contact>
+            </Route>
+            <Route path="/account">
+              <Account></Account>
+            </Route>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
+            <Route path="/addproducts">
+              <AddProducts></AddProducts>
+            </Route>
+            <Route path="/makeadmin">
+              <MakeAdmin></MakeAdmin>
+            </Route>
+            <Route path="/manageorders">
+              <ManageOrders></ManageOrders>
+            </Route>
+            <Route path="/myorders">
+              <MyOrders></MyOrders>
+            </Route>
+            <Route path="/manageproducts">
+              <ManageProducts></ManageProducts>
+            </Route>
+            <Route path="/reviews">
+              <Reviews></Reviews>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </BrowserRouter>
+      </AuthProvider>
     </>
   );
 }
