@@ -6,7 +6,7 @@ export default function PrivateRoute({ children, ...rest }) {
   const { user, loading } = useAuth();
   if (loading) {
     return (
-      <div className="d-flex justify-content-center">
+      <div className="d-flex m-5 justify-content-center">
         <div className="spinner-border" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>

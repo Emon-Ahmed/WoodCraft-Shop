@@ -6,6 +6,7 @@ import Contact from "./Pages/Contact";
 import Account from "./Pages/Account";
 import Products from "./Pages/Products";
 import Blogs from "./Pages/Blogs";
+import SingleProducts from "./Pages/SingleProduct";
 
 import Reviews from "./Pages/Admin/Review";
 import AddProducts from "./Pages/Admin/AddProduct";
@@ -30,7 +31,7 @@ function App() {
             <Route exact path="/">
               <Home></Home>
             </Route>
-            <Route path="/products">
+            <Route exact path="/products">
               <Products></Products>
             </Route>
             <Route path="/blogs">
@@ -47,6 +48,9 @@ function App() {
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
+            </PrivateRoute>
+            <PrivateRoute exact path="/products/:id">
+              <SingleProducts></SingleProducts>
             </PrivateRoute>
             <PrivateRoute path="/addproducts">
               <AddProducts></AddProducts>

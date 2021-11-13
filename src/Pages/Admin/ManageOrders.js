@@ -1,14 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit, faTrashAlt, faEye } from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../Hooks/useAuth";
 
 export default function ManageOrders() {
   const { admin, user, logout } = useAuth();
-  const Edit = <FontAwesomeIcon icon={faEdit} />;
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    const url = `http://localhost:5000/orders`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setOrders(data));
+  }, []);
+
+  console.log(orders);
+
+  const deleteOrders = (id) => {
+    const url = `http://localhost:5000/orders/${id}`;
+    console.log(url);
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          setOrders(orders.filter((item) => item._id != id));
+          alert("Deleted");
+        }
+        console.log(data);
+      });
+     
+  };
+
   const Delete = <FontAwesomeIcon icon={faTrashAlt} />;
-  const View = <FontAwesomeIcon icon={faEye} />;
+
   return (
     <div className="container">
       <div className="breadcrumb d-flex">
@@ -16,7 +46,7 @@ export default function ManageOrders() {
       </div>
       <div className="dashboard">
         <div className="dashboard-navbar my-5">
-          <ul class="nav flex-column d-inline-block">
+          <ul className="nav flex-column d-inline-block">
             <li className="nav-item">
               <Link
                 className="nav-link active mx-2"
@@ -100,20 +130,17 @@ export default function ManageOrders() {
 
         {admin && (
           <div className="w-75 dashboard-content d-inline-block py-0 top-0">
-            <table class="table table-hover table-borderless">
-              <thead class="table-light">
+            <table className="table table-hover table-borderless">
+              <thead className="table-light">
                 <tr>
                   <th className="py-4" scope="col">
-                    Name
+                    Product Name
                   </th>
                   <th className="py-4" scope="col">
-                    Date
+                    User Email
                   </th>
                   <th className="py-4" scope="col">
-                    Total
-                  </th>
-                  <th className="py-4" scope="col">
-                    Status
+                    Price
                   </th>
                   <th className="py-4" scope="col">
                     Actions
@@ -121,24 +148,14 @@ export default function ManageOrders() {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">Emon</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>Otto</td>
-                  <td>
-                    {View} {Edit} {Delete}
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Ahmed</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>Otto</td>
-                  <td>
-                    {View} {Edit} {Delete}
-                  </td>
-                </tr>
+                {orders.map((order) => (
+                  <tr>
+                    <td>{order.deliveryName}</td>
+                    <td>{order.deliveryEmail}</td>
+                    <td>{order.deliveryPrice}</td>
+                    <td onClick={() => deleteOrders(order._id)} >{Delete}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

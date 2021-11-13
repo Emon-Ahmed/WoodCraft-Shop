@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 
 export default function Products() {
   const { user } = useAuth();
+  
   const [showProducts, setShowProducts] = useState([]);
 
   useEffect(() => {
@@ -11,6 +13,7 @@ export default function Products() {
       .then((res) => res.json())
       .then((data) => setShowProducts(data));
   }, []);
+
   return (
     <div className="container">
       <div className="breadcrumb d-flex">
@@ -24,7 +27,7 @@ export default function Products() {
             <p className="py-1 text-secondary">{product.productName}</p>
             <div className="d-flex justify-content-between align-items-center">
               <p>${product.productPrice}</p>
-              <p className="sub_btn d-inline-block">BUY NOW</p>
+              <Link to={`/products/${product._id}`}> <p className="sub_btn d-inline-block">BUY NOW</p> </Link>
             </div>
           </div>
         ))}

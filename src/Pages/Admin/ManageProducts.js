@@ -15,9 +15,28 @@ export default function ManageProducts() {
       .then((data) => setShowProducts(data));
   }, []);
 
-  const Edit = <FontAwesomeIcon icon={faEdit} />;
+
+  const deleteOrders = (id) => {
+    const url = `http://localhost:5000/products/${id}`;
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          setShowProducts(showProducts.filter((item) => item._id != id));
+          alert("Deleted");
+        }
+        console.log(data);
+      });
+  };
+
+
   const Delete = <FontAwesomeIcon icon={faTrashAlt} />;
-  const View = <FontAwesomeIcon icon={faEye} />;
+
   return (
     <div className="container">
       <div className="breadcrumb d-flex">
@@ -113,16 +132,10 @@ export default function ManageProducts() {
               <thead class="table-light">
                 <tr>
                   <th className="py-4" scope="col">
-                    Order
-                  </th>
-                  <th className="py-4" scope="col">
                     Name
                   </th>
                   <th className="py-4" scope="col">
                     Price
-                  </th>
-                  <th className="py-4" scope="col">
-                    Status
                   </th>
                   <th className="py-4" scope="col">
                     Actions
@@ -132,12 +145,10 @@ export default function ManageProducts() {
               <tbody>
                 {showProducts.map((product) => (
                   <tr>
-                    <th scope="row">1</th>
                     <td>{product.productName}</td>
                     <td>{product.productPrice}</td>
-                    <td>Otto</td>
-                    <td>
-                      {View} {Edit} {Delete}
+                    <td onClick={() => deleteOrders(product._id)}>
+                      {Delete}
                     </td>
                   </tr>
                 ))}

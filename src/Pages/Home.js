@@ -94,21 +94,12 @@ export default function Home() {
                 <p className="py-1 text-secondary">{product.productName}</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <p>${product.productPrice}</p>
-                  <p className="sub_btn d-inline-block">BUY NOW</p>
+                  <Link to={`/products/${product._id}`}> <p className="sub_btn d-inline-block">BUY NOW</p> </Link>
                 </div>
               </div> ) ).slice(0, 4)
               }
               
-              
-
-              {/* <div className="product">
-                <img className="img-blur" src="/product/1.jpg" alt="" />
-                <p className="py-1 text-secondary">Bobber Table Lamp</p>
-                <div className="d-flex justify-content-between align-items-center">
-                  <p>$165.58</p>
-                  <p className="sub_btn d-inline-block">BUY NOW</p>
-                </div>
-              </div> */}
+            
             </div>
           </div>
         </div>
