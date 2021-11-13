@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 import Newsletter from "../Components/Newsletter";
 
 export default function Home() {
+
+  const [showProducts, setShowProducts] = useState([]);
+  useEffect(() => {
+    const url = `http://localhost:5000/products`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setShowProducts(data));
+  }, []);
+
   return (
     <div className="container">
       <header className="App-header">
@@ -78,38 +87,28 @@ export default function Home() {
           </div>
           <div className="col-md-6 my-5">
             <div className="product-items">
-              <div className="product">
-                <img className="img-blur" src="/product/4.jpg" alt="" />
-                <p className="py-1 text-secondary">Norm Wall Clock</p>
+              
+              {
+                showProducts.map( product => ( <div className="product">
+                <img className="img-blur" src={product.productImg} alt="" />
+                <p className="py-1 text-secondary">{product.productName}</p>
                 <div className="d-flex justify-content-between align-items-center">
-                  <p>$101.21</p>
+                  <p>${product.productPrice}</p>
                   <p className="sub_btn d-inline-block">BUY NOW</p>
                 </div>
-              </div>
-              <div className="product">
-                <img className="img-blur" src="/product/2.jpg" alt="" />
-                <p className="py-1 text-secondary">Afteroom Dining Chair</p>
-                <div className="d-flex justify-content-between align-items-center">
-                  <p>$169.99 – $216.44</p>
-                  <p className="sub_btn d-inline-block">BUY NOW</p>
-                </div>
-              </div>
-              <div className="product">
-                <img className="img-blur" src="/product/3.jpg" alt="" />
-                <p className="py-1 text-secondary">Pack Bobber Lamps</p>
-                <div className="d-flex justify-content-between align-items-center">
-                  <p>$146.43</p>
-                  <p className="sub_btn d-inline-block">BUY NOW</p>
-                </div>
-              </div>
-              <div className="product">
+              </div> ) ).slice(0, 4)
+              }
+              
+              
+
+              {/* <div className="product">
                 <img className="img-blur" src="/product/1.jpg" alt="" />
                 <p className="py-1 text-secondary">Bobber Table Lamp</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <p>$165.58</p>
                   <p className="sub_btn d-inline-block">BUY NOW</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
