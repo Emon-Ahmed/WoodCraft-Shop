@@ -14,6 +14,9 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  const [admin, setAdmin] = useState(false);
+
   const auth = getAuth();
   // const history = useHistory();
 
@@ -23,6 +26,7 @@ const useFirebase = () => {
       .then((userCredential) => {
         const destinationregi = location?.state?.from || "/";
         history.replace(destinationregi);
+        saveUser(email, "POST");
         setError("");
       })
       .catch((error) => {
@@ -57,6 +61,12 @@ const useFirebase = () => {
     return () => unsub;
   }, []);
 
+  useEffect(() => {
+    fetch(`http://localhost:5000/users/${user.email}`)
+      .then((res) => res.json())
+      .then((data) => setAdmin(data.admin));
+  }, [user.email]);
+
   const logout = () => {
     signOut(auth)
       .then(() => {})
@@ -64,8 +74,21 @@ const useFirebase = () => {
       .finally(() => setLoading(false));
   };
 
+  const saveUser = (email, method) => {
+    const user = { email };
+    fetch("http://localhost:5000/users", {
+      method: method,
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    }).then();
+  };
+
   return {
+    admin,
     user,
+    saveUser,
     auth,
     loading,
     regiUser,

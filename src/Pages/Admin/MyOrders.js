@@ -5,7 +5,7 @@ import { faEdit, faTrashAlt, faEye  } from "@fortawesome/free-solid-svg-icons";
 import useAuth from "../../Hooks/useAuth";
 
 export default function MyOrders() {
-  const { user, logout } = useAuth();
+  const {admin, user, logout } = useAuth();
   const Edit = <FontAwesomeIcon icon={faEdit} />
   const Delete = <FontAwesomeIcon icon={faTrashAlt} />
   const View = <FontAwesomeIcon icon={faEye} />
@@ -15,7 +15,7 @@ export default function MyOrders() {
         <p>My Orders</p>
       </div>
       <div className="dashboard">
-        <div className="dashboard-navbar my-5">
+      <div className="dashboard-navbar my-5">
           <ul class="nav flex-column d-inline-block">
             <li className="nav-item">
               <Link
@@ -44,7 +44,8 @@ export default function MyOrders() {
                 My Reviews
               </Link>
             </li>
-            <li className="nav-item">
+            {
+              admin && <div> <li className="nav-item">
               <Link
                 className="nav-link active mx-2"
                 aria-current="page"
@@ -79,7 +80,8 @@ export default function MyOrders() {
               >
                 Make A Admin
               </Link>
-            </li>
+            </li> </div>
+            }
             <li className="nav-item">
               <Link onClick={logout}  className="nav-link active mx-2" aria-current="page" to="/">
                 Logout

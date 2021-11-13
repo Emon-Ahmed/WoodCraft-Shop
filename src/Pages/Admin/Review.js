@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 export default function Review() {
-  const { user, logout } = useAuth();
+  const {admin, user, logout } = useAuth();
   return (
-    <div className="container">
+    <div className="container mb-5 pb-5">
       <div className="breadcrumb d-flex">
         <p>Add Reviews</p>
       </div>
       <div className="dashboard">
-        <div className="dashboard-navbar my-5">
+      <div className="dashboard-navbar my-5">
           <ul class="nav flex-column d-inline-block">
             <li className="nav-item">
               <Link
@@ -39,7 +39,8 @@ export default function Review() {
                 My Reviews
               </Link>
             </li>
-            <li className="nav-item">
+            {
+              admin && <div> <li className="nav-item">
               <Link
                 className="nav-link active mx-2"
                 aria-current="page"
@@ -74,9 +75,10 @@ export default function Review() {
               >
                 Make A Admin
               </Link>
-            </li>
+            </li> </div>
+            }
             <li className="nav-item">
-              <Link onClick={logout} className="nav-link active mx-2" aria-current="page" to="/">
+              <Link onClick={logout}  className="nav-link active mx-2" aria-current="page" to="/">
                 Logout
               </Link>
             </li>
