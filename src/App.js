@@ -8,7 +8,6 @@ import Products from "./Pages/Products";
 import Blogs from "./Pages/Blogs";
 import SingleProducts from "./Pages/SingleProduct";
 
-import Reviews from "./Pages/Admin/Review";
 import AddProducts from "./Pages/Admin/AddProduct";
 import MakeAdmin from "./Pages/Admin/MakeAdmin";
 import Dashboard from "./Pages/Admin/Dashboard";
@@ -67,9 +66,6 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/manageproducts">
               <ManageProducts></ManageProducts>
-            </PrivateRoute>
-            <PrivateRoute path="/reviews">
-              <Reviews></Reviews>
             </PrivateRoute>
             <Route exact path="*">
               <NotFound></NotFound>

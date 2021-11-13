@@ -14,14 +14,10 @@ export default function About() {
           <div className="about-info my-5">
             <h1 className="py-2">About Us</h1>
             <p className="text-secondary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-              accusantium illum impedit rerum distinctio ratione minima, rem
-              tenetur exercitationem. Doloribus!
+            Woodcraft is responding to COVID-19 by providing customers with essential services such as curbside pickup at our store locations for your safety and convenience. Please contact your local store for details. Woodcraft.com is open 24/7 with normal delivery times to meet your needs. Click here to learn more.
             </p>
             <p className="text-secondary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-              accusantium illum impedit rerum distinctio ratione minima, rem
-              tenetur exercitationem. Doloribus!
+            Woodcraft Supply, LLC is one of the nation's oldest and largest suppliers of quality woodworking tools and supplies. You'll find Woodcraft stores in more than 70 major metropolitan areas across the U.S.; and Woodcraft annually distributes 1.5 million catalogs featuring more than 8,000 items to all 50 states and 117 foreign countries. 
             </p>
             <Link to="/contact"><div className="account-btn">Contact Us</div></Link>
           </div>

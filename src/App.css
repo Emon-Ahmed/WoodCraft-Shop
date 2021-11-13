@@ -98,6 +98,13 @@ a{
 .product p:last-child {
   font-weight: 500;
 }
+.footer-text a{
+  color: gray;
+  text-decoration: none !important;
+  
+
+
+}
 
 .breadcrumb {
   background-image: url("https://emonahmed.com/programming-hero/12/breadcrumb.jpg");

@@ -30,15 +30,7 @@ export default function Dashboard() {
                 My Orders
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link active mx-2"
-                aria-current="page"
-                to="/reviews"
-              >
-                My Reviews
-              </Link>
-            </li>
+            
             {admin && (
               <div>
                 {" "}
