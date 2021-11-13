@@ -12,7 +12,7 @@ export default function MakeAdmin() {
   };
   const addAdmin = () => {
     const user = { email };
-    fetch("http://localhost:5000/users/admin", {
+    fetch("https://fierce-caverns-02407.herokuapp.com/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -31,7 +31,7 @@ export default function About() {
             <img
               style={{ width: "280px" }}
               className="about-img d-block ms-auto"
-              src="/about.svg"
+              src="https://emonahmed.com/programming-hero/12/about.svg"
               alt=""
             />
           </div>

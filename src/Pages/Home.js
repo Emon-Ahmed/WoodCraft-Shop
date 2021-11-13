@@ -7,7 +7,7 @@ export default function Home() {
 
   const [showProducts, setShowProducts] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/products`;
+    const url = `https://fierce-caverns-02407.herokuapp.com/products`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setShowProducts(data));
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="container">
       <header className="App-header">
-        <img src="/logo.png" className="App-logo m-5" alt="logo" />
+        <img src="https://emonahmed.com/programming-hero/12/logo.png" className="App-logo m-5" alt="logo" />
       </header>
       <div className="text-center header-text">
         <h1 className="fw-bolder my-4 header-text"> The WoodCraft Shop </h1>
@@ -27,7 +27,7 @@ export default function Home() {
       </div>
       <div className="container my-4">
         <img
-          src="/banner.jpg"
+          src="https://emonahmed.com/programming-hero/12/banner.jpg"
           className="d-block mx-auto banner-img"
           alt="Banner"
         />
@@ -49,12 +49,12 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <img className="img-fluid img-blur" src="hero_2.jpeg" alt="" />
+            <img className="img-fluid img-blur" src="https://emonahmed.com/programming-hero/12/hero_2.jpeg" alt="Hero2" />
           </div>
         </div>
         <div className="col-md-6">
           <div className="hero-banner img-blur">
-            <img className="img-fluid" src="hero_1.jpeg" alt="" />
+            <img className="img-fluid" src="https://emonahmed.com/programming-hero/12/hero_1.jpeg" alt="Hero1" />
           </div>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default function Home() {
             <div>
               <div className="card text-black">
                 <img
-                  src="/product_banner.jpeg"
+                  src="https://emonahmed.com/programming-hero/12/product_banner.jpeg"
                   className="card-img"
                   alt="Product Banner"
                 />
@@ -109,7 +109,7 @@ export default function Home() {
           <div className="bottom">
             <div className="card text-black">
               <img
-                src="/product/banner-2.jpg"
+                src="https://emonahmed.com/programming-hero/12/product/banner-2.jpg"
                 className="card-img bottom"
                 alt="Product Banner"
               />
@@ -126,7 +126,7 @@ export default function Home() {
           <div className="bottom">
             <div className="card text-black">
               <img
-                src="/product/banner-3.jpeg"
+                src="https://emonahmed.com/programming-hero/12/product/banner-3.jpeg"
                 className="card-img bottom"
                 alt="Product Banner"
               />

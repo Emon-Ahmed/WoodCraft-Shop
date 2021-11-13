@@ -43,8 +43,8 @@ export default function Contact() {
             <img
               style={{ width: "320px" }}
               className="about-img d-block ms-auto"
-              src="/contact.svg"
-              alt=""
+              src="https://emonahmed.com/programming-hero/12/contact.svg"
+              alt="Contact"
             />
           </div>
         </div>

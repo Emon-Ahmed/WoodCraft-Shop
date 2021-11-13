@@ -12,7 +12,7 @@ export default function Header() {
           <ul className="navbar-nav me-5 mb-2 mb-lg-0">
             <li className="nav-item">
               <Link className="navbar-brand" to="/">
-                <img className="img-fluid logo" src="/mainlogo.png" alt="" />
+                <img className="img-fluid logo" src="https://emonahmed.com/programming-hero/12/mainlogo.png" alt="Logo" />
               </Link>
             </li>
           </ul>
@@ -56,15 +56,6 @@ export default function Header() {
                   Blogs
                 </Link>
               </li>
-              {/* <li className="nav-item">
-                <Link
-                  className="nav-link active mx-2"
-                  aria-current="page"
-                  to="/reviews"
-                >
-                  Reviews
-                </Link>
-              </li> */}
               <li className="nav-item">
                 <Link
                   className="nav-link active mx-2"

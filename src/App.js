@@ -20,6 +20,7 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import NotFound from "./Pages/NotFound";
 
 function App() {
   return (
@@ -70,6 +71,9 @@ function App() {
             <PrivateRoute path="/reviews">
               <Reviews></Reviews>
             </PrivateRoute>
+            <Route exact path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
           <Footer></Footer>
         </BrowserRouter>

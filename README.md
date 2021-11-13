@@ -22,6 +22,8 @@ https://woodcraft-shop.web.app/
 ## Features and Functionality
 List The Ready Features Here:
 - You Can Find Best Product Here
+- You Can Login With Your Email And Password
+- You Can Delete/Cancel Your Order
 - Also You Can Easily Navigate The Navbar
 - This Design is Followed By "Less is More"
 

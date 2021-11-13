@@ -6,7 +6,6 @@ export default function SingleProduct() {
   const { id } = useParams();
   const { user } = useAuth();
   const [showProduct, setShowProduct] = useState({});
-
   const [productBuy, setProductBuy] = useState({});
 
   const handleOnBlur = (e) => {
@@ -24,7 +23,7 @@ export default function SingleProduct() {
       deliveryPrice: showProduct.productPrice,
       deliveryEmail: user.email,
     };
-    fetch("http://localhost:5000/orders", {
+    fetch("https://fierce-caverns-02407.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -40,7 +39,7 @@ export default function SingleProduct() {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://fierce-caverns-02407.herokuapp.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -133,7 +132,7 @@ export default function SingleProduct() {
             </div>
           </div>
           <div>
-            <img src="/about.svg" />
+            <img src="https://emonahmed.com/programming-hero/12/about.svg" />
           </div>
         </div>
       </div>

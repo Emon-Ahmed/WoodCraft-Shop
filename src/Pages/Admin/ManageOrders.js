@@ -9,7 +9,7 @@ export default function ManageOrders() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/orders`;
+    const url = `https://fierce-caverns-02407.herokuapp.com/orders`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data));
@@ -18,7 +18,7 @@ export default function ManageOrders() {
   console.log(orders);
 
   const deleteOrders = (id) => {
-    const url = `http://localhost:5000/orders/${id}`;
+    const url = `https://fierce-caverns-02407.herokuapp.com/orders/${id}`;
     console.log(url);
     fetch(url, {
       method: "DELETE",

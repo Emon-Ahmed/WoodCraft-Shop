@@ -9,7 +9,7 @@ export default function ManageProducts() {
 
   const [showProducts, setShowProducts] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/products`;
+    const url = `https://fierce-caverns-02407.herokuapp.com/products`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setShowProducts(data));
@@ -17,7 +17,7 @@ export default function ManageProducts() {
 
 
   const deleteOrders = (id) => {
-    const url = `http://localhost:5000/products/${id}`;
+    const url = `https://fierce-caverns-02407.herokuapp.com/products/${id}`;
     fetch(url, {
       method: "DELETE",
       headers: {

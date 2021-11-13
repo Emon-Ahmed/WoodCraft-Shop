@@ -28,7 +28,7 @@ export default function Account() {
   };
 
   const registerSubmit = (e) => {
-    regiUser(regiData.email, regiData.password , location, history);
+    regiUser(regiData.email, regiData.password, location, history);
   };
 
   return (
