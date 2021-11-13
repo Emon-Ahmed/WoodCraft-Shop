@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 export default function AddProduct() {
-  const {logout} = useAuth()
+  const { logout } = useAuth();
+  const [productInfo, setProductInfo] = useState({});
+  const handleOnBlur = (e) => {
+    const field = e.target.name;
+    const value = e.target.value;
+    const newInfo = { ...productInfo };
+    newInfo[field] = value;
+    setProductInfo(newInfo);
+  };
+
+  const addProduct = (e) => {
+    const product = { ...productInfo };
+    fetch("http://localhost:5000/products", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(product),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.insertedId) {
+        alert("DONE");
+      }
+    });
+  };
+  
+
   return (
     <div className="container">
       <div className="breadcrumb d-flex">
@@ -76,7 +103,12 @@ export default function AddProduct() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link onClick={logout} className="nav-link active mx-2" aria-current="page" to="/">
+              <Link
+                onClick={logout}
+                className="nav-link active mx-2"
+                aria-current="page"
+                to="/"
+              >
                 Logout
               </Link>
             </li>
@@ -94,6 +126,8 @@ export default function AddProduct() {
                 Product Name
               </label>
               <input
+                onBlur={handleOnBlur}
+                name="productName"
                 type="text"
                 class="form-control"
                 id="exampleFormControlInput1"
@@ -106,6 +140,8 @@ export default function AddProduct() {
                   Product Photo URL
                 </label>
                 <input
+                  onBlur={handleOnBlur}
+                  name="productImg"
                   type="text"
                   class="form-control"
                   id="exampleFormControlInput1"
@@ -117,6 +153,8 @@ export default function AddProduct() {
                   Price
                 </label>
                 <input
+                  onBlur={handleOnBlur}
+                  name="productPrice"
                   type="number"
                   class="form-control"
                   id="exampleFormControlInput1"
@@ -129,6 +167,8 @@ export default function AddProduct() {
                 Product Description
               </label>
               <textarea
+                onBlur={handleOnBlur}
+                name="productDescription"
                 placeholder="Product Description"
                 class="form-control"
                 id="exampleFormControlTextarea1"
@@ -136,7 +176,7 @@ export default function AddProduct() {
               ></textarea>
             </div>
           </div>
-          <div className="account-btn">Add Now</div>
+          <div onClick={addProduct} className="account-btn">Add Now</div>
         </div>
       </div>
     </div>

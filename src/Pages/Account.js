@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useAuth from "../Hooks/useAuth";
-import { useHistory, useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router-dom";
 export default function Account() {
   const [loginData, setLoginData] = useState({});
   const [regiData, setRegiData] = useState({});
@@ -28,7 +28,7 @@ export default function Account() {
   };
 
   const registerSubmit = (e) => {
-    regiUser(regiData.email, regiData.password);
+    regiUser(regiData.email, regiData.password , location, history);
   };
 
   return (
@@ -119,7 +119,7 @@ export default function Account() {
           </div>
           {user?.email && (
             <div className="my-3 alert alert-success" role="alert">
-              Your Account Has Been Created
+              You Logged Successfully.
             </div>
           )}
           {error && (

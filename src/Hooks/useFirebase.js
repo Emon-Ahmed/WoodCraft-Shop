@@ -7,7 +7,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-
+// import { useHistory } from "react-router-dom";
 
 initializeAuth();
 const useFirebase = () => {
@@ -15,12 +15,14 @@ const useFirebase = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const auth = getAuth();
+  // const history = useHistory();
 
-
-  const regiUser = (email, password) => {
+  const regiUser = (email, password, location, history) => {
     setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        const destinationregi = location?.state?.from || "/";
+        history.replace(destinationregi);
         setError("");
       })
       .catch((error) => {
