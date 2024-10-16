@@ -9,15 +9,14 @@ export default function ManageProducts() {
 
   const [showProducts, setShowProducts] = useState([]);
   useEffect(() => {
-    const url = `https://fierce-caverns-02407.herokuapp.com/products`;
+    const url = `https://woodcraft-shop-server.onrender.com/products`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setShowProducts(data));
   }, []);
 
-
   const deleteOrders = (id) => {
-    const url = `https://fierce-caverns-02407.herokuapp.com/products/${id}`;
+    const url = `https://woodcraft-shop-server.onrender.com/products/${id}`;
     fetch(url, {
       method: "DELETE",
       headers: {
@@ -33,7 +32,6 @@ export default function ManageProducts() {
         console.log(data);
       });
   };
-
 
   const Delete = <FontAwesomeIcon icon={faTrashAlt} />;
 
@@ -63,7 +61,7 @@ export default function ManageProducts() {
                 My Orders
               </Link>
             </li>
-            
+
             {admin && (
               <div>
                 {" "}
@@ -139,9 +137,7 @@ export default function ManageProducts() {
                   <tr>
                     <td>{product.productName}</td>
                     <td>{product.productPrice}</td>
-                    <td onClick={() => deleteOrders(product._id)}>
-                      {Delete}
-                    </td>
+                    <td onClick={() => deleteOrders(product._id)}>{Delete}</td>
                   </tr>
                 ))}
               </tbody>

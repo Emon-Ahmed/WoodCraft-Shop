@@ -15,7 +15,7 @@ export default function AddProduct() {
 
   const addProduct = (e) => {
     const product = { ...productInfo };
-    fetch("https://fierce-caverns-02407.herokuapp.com/products", {
+    fetch("https://woodcraft-shop-server.onrender.com/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",

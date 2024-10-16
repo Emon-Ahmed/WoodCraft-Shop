@@ -9,7 +9,7 @@ export default function ManageOrders() {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    const url = `https://fierce-caverns-02407.herokuapp.com/orders`;
+    const url = `https://woodcraft-shop-server.onrender.com/orders`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data));
@@ -18,7 +18,7 @@ export default function ManageOrders() {
   console.log(orders);
 
   const deleteOrders = (id) => {
-    const url = `https://fierce-caverns-02407.herokuapp.com/orders/${id}`;
+    const url = `https://woodcraft-shop-server.onrender.com/orders/${id}`;
     console.log(url);
     fetch(url, {
       method: "DELETE",
@@ -34,7 +34,6 @@ export default function ManageOrders() {
         }
         console.log(data);
       });
-     
   };
 
   const Delete = <FontAwesomeIcon icon={faTrashAlt} />;
@@ -65,7 +64,7 @@ export default function ManageOrders() {
                 My Orders
               </Link>
             </li>
-            
+
             {admin && (
               <div>
                 {" "}
@@ -145,7 +144,7 @@ export default function ManageOrders() {
                     <td>{order.deliveryName}</td>
                     <td>{order.deliveryEmail}</td>
                     <td>{order.deliveryPrice}</td>
-                    <td onClick={() => deleteOrders(order._id)} >{Delete}</td>
+                    <td onClick={() => deleteOrders(order._id)}>{Delete}</td>
                   </tr>
                 ))}
               </tbody>

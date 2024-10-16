@@ -23,7 +23,7 @@ export default function SingleProduct() {
       deliveryPrice: showProduct.productPrice,
       deliveryEmail: user.email,
     };
-    fetch("https://fierce-caverns-02407.herokuapp.com/orders", {
+    fetch("https://woodcraft-shop-server.onrender.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -39,7 +39,7 @@ export default function SingleProduct() {
   };
 
   useEffect(() => {
-    fetch(`https://fierce-caverns-02407.herokuapp.com/products/${id}`)
+    fetch(`https://woodcraft-shop-server.onrender.com/products/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -7,7 +7,7 @@ export default function Products() {
   const [showProducts, setShowProducts] = useState([]);
 
   useEffect(() => {
-    const url = `https://fierce-caverns-02407.herokuapp.com/products`;
+    const url = `https://woodcraft-shop-server.onrender.com/products`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setShowProducts(data));
@@ -26,7 +26,10 @@ export default function Products() {
             <p className="py-1 text-secondary">{product.productName}</p>
             <div className="d-flex justify-content-between align-items-center">
               <p>${product.productPrice}</p>
-              <Link to={`/products/${product._id}`}> <p className="sub_btn d-inline-block">BUY NOW</p> </Link>
+              <Link to={`/products/${product._id}`}>
+                {" "}
+                <p className="sub_btn d-inline-block">BUY NOW</p>{" "}
+              </Link>
             </div>
           </div>
         ))}

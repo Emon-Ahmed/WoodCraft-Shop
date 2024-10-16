@@ -12,7 +12,7 @@ export default function MakeAdmin() {
   };
   const addAdmin = () => {
     const user = { email };
-    fetch("https://fierce-caverns-02407.herokuapp.com/users/admin", {
+    fetch("https://woodcraft-shop-server.onrender.com/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -53,7 +53,7 @@ export default function MakeAdmin() {
                 My Orders
               </Link>
             </li>
-           
+
             {admin && (
               <div>
                 {" "}

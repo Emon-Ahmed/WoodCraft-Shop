@@ -10,14 +10,14 @@ export default function MyOrders() {
   const [myOrders, setMyOrders] = useState([]);
 
   useEffect(() => {
-    const url = `https://fierce-caverns-02407.herokuapp.com/orders/${user.email}`;
+    const url = `https://woodcraft-shop-server.onrender.com/orders/${user.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
   }, [user.email]);
 
   const deleteOrders = (id) => {
-    const url = `https://fierce-caverns-02407.herokuapp.com/orders/${id}`;
+    const url = `https://woodcraft-shop-server.onrender.com/orders/${id}`;
     fetch(url, {
       method: "DELETE",
       headers: {
@@ -60,7 +60,7 @@ export default function MyOrders() {
                 My Orders
               </Link>
             </li>
-            
+
             {admin && (
               <div>
                 {" "}

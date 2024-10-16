@@ -62,7 +62,7 @@ const useFirebase = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://fierce-caverns-02407.herokuapp.com/users/${user.email}`)
+    fetch(`https://woodcraft-shop-server.onrender.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);
@@ -76,7 +76,7 @@ const useFirebase = () => {
 
   const saveUser = (email, method) => {
     const user = { email };
-    fetch("https://fierce-caverns-02407.herokuapp.com/users", {
+    fetch("https://woodcraft-shop-server.onrender.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",

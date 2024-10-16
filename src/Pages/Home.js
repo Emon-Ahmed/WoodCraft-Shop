@@ -4,10 +4,9 @@ import "../App.css";
 import Newsletter from "../Components/Newsletter";
 
 export default function Home() {
-
   const [showProducts, setShowProducts] = useState([]);
   useEffect(() => {
-    const url = `https://fierce-caverns-02407.herokuapp.com/products`;
+    const url = `https://woodcraft-shop-server.onrender.com/products`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setShowProducts(data));
@@ -16,7 +15,11 @@ export default function Home() {
   return (
     <div className="container">
       <header className="App-header">
-        <img src="https://emonahmed.com/programming-hero/12/logo.png" className="App-logo m-5" alt="logo" />
+        <img
+          src="https://emonahmed.com/programming-hero/12/logo.png"
+          className="App-logo m-5"
+          alt="logo"
+        />
       </header>
       <div className="text-center header-text">
         <h1 className="fw-bolder my-4 header-text"> The WoodCraft Shop </h1>
@@ -49,12 +52,20 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <img className="img-fluid img-blur" src="https://emonahmed.com/programming-hero/12/hero_2.jpeg" alt="Hero2" />
+            <img
+              className="img-fluid img-blur"
+              src="https://emonahmed.com/programming-hero/12/hero_2.jpeg"
+              alt="Hero2"
+            />
           </div>
         </div>
         <div className="col-md-6">
           <div className="hero-banner img-blur">
-            <img className="img-fluid" src="https://emonahmed.com/programming-hero/12/hero_1.jpeg" alt="Hero1" />
+            <img
+              className="img-fluid"
+              src="https://emonahmed.com/programming-hero/12/hero_1.jpeg"
+              alt="Hero1"
+            />
           </div>
         </div>
       </div>
@@ -80,26 +91,30 @@ export default function Home() {
                 <div className="card-img-overlay text-center py-5 my-4">
                   <h4 className="">BEST CHOICE</h4>
                   <h1 className="card-title py-3">The Last Sales</h1>
-                  <Link to="/products"><button className="custom-btn">SHOP NOW</button></Link>
+                  <Link to="/products">
+                    <button className="custom-btn">SHOP NOW</button>
+                  </Link>
                 </div>
               </div>
             </div>
           </div>
           <div className="col-md-6 my-5">
             <div className="product-items">
-              
-              {
-                showProducts.map( product => ( <div className="product">
-                <img className="img-blur" src={product.productImg} alt="" />
-                <p className="py-1 text-secondary">{product.productName}</p>
-                <div className="d-flex justify-content-between align-items-center">
-                  <p>${product.productPrice}</p>
-                  <Link to={`/products/${product._id}`}> <p className="sub_btn d-inline-block">BUY NOW</p> </Link>
-                </div>
-              </div> ) ).slice(0, 4)
-              }
-              
-            
+              {showProducts
+                .map((product) => (
+                  <div className="product">
+                    <img className="img-blur" src={product.productImg} alt="" />
+                    <p className="py-1 text-secondary">{product.productName}</p>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <p>${product.productPrice}</p>
+                      <Link to={`/products/${product._id}`}>
+                        {" "}
+                        <p className="sub_btn d-inline-block">BUY NOW</p>{" "}
+                      </Link>
+                    </div>
+                  </div>
+                ))
+                .slice(0, 4)}
             </div>
           </div>
         </div>
@@ -116,7 +131,9 @@ export default function Home() {
               <div className="card-img-overlay d-flex align-items-end p-5 my-4">
                 <div className="bottom-banner">
                   <h1 className="card-title py-3">Sunset Lamp</h1>
-                  <Link to="/products"><div className="sub_btn">Shop Now</div></Link>
+                  <Link to="/products">
+                    <div className="sub_btn">Shop Now</div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -133,7 +150,9 @@ export default function Home() {
               <div className="card-img-overlay d-flex align-items-end p-5 my-4">
                 <div className="bottom-banner">
                   <h1 className="card-title py-3">Sofia Collection</h1>
-                  <Link to="/products"><div className="sub_btn">Shop Now</div></Link>
+                  <Link to="/products">
+                    <div className="sub_btn">Shop Now</div>
+                  </Link>
                 </div>
               </div>
             </div>
