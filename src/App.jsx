@@ -1,25 +1,25 @@
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
-import Account from "./Pages/Account";
-import Products from "./Pages/Products";
-import Blogs from "./Pages/Blogs";
-import SingleProducts from "./Pages/SingleProduct";
+import Home from "./Pages/Home.jsx";
+import About from "./Pages/About.jsx";
+import Contact from "./Pages/Contact.jsx";
+import Account from "./Pages/Account.jsx";
+import Products from "./Pages/Products.jsx";
+import Blogs from "./Pages/Blogs.jsx";
+import SingleProducts from "./Pages/SingleProduct.jsx";
 
-import AddProducts from "./Pages/Admin/AddProduct";
-import MakeAdmin from "./Pages/Admin/MakeAdmin";
-import Dashboard from "./Pages/Admin/Dashboard";
-import ManageOrders from "./Pages/Admin/ManageOrders";
-import ManageProducts from "./Pages/Admin/ManageProducts";
-import MyOrders from "./Pages/Admin/MyOrders";
+import AddProducts from "./Pages/Admin/AddProduct.jsx";
+import MakeAdmin from "./Pages/Admin/MakeAdmin.jsx";
+import Dashboard from "./Pages/Admin/Dashboard.jsx";
+import ManageOrders from "./Pages/Admin/ManageOrders.jsx";
+import ManageProducts from "./Pages/Admin/ManageProducts.jsx";
+import MyOrders from "./Pages/Admin/MyOrders.jsx";
 
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import AuthProvider from "./Context/AuthProvider";
-import PrivateRoute from "./PrivateRoute/PrivateRoute";
-import NotFound from "./Pages/NotFound";
+import Header from "./Components/Header.jsx";
+import Footer from "./Components/Footer.jsx";
+import AuthProvider from "./Context/AuthProvider.jsx";
+import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
+import NotFound from "./Pages/NotFound.jsx";
 
 function App() {
   return (
